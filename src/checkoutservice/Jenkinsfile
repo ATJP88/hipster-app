@@ -2,7 +2,7 @@ pipeline {
 
   environment {
     PROJECT = "proud-reality-405802"
-    APP_NAME = "adservice"
+    APP_NAME = "checkoutservice"
     FE_SVC_NAME = "${APP_NAME}-pay"
     CLUSTER = "k8s-cluster-dev"
     CLUSTER_ZONE = "europe-west2-a"
@@ -54,7 +54,7 @@ spec:
     }
     stage('Build and push image with Container Builder') {
       steps {
-        dir("./src/adservice") {
+        dir("./src/checkoutservice") {
         container('gcloud') {
           sh "pwd"
            sh "ls -lrta"
@@ -79,7 +79,7 @@ spec:
           sh "export LIGHTSTEP_ACCESS_TOKEN=y3i3FeoGUm6Az4Iu38cLDKnBceJ6dIQjKSBUxR9AhK3jYOk3vtc3AuM9KPW4FP+qIv48NnJ7o5RwT/uAHmcDM3kJazkHP1DxXPtzml7I"
           sh "gcloud container clusters get-credentials hipster-dev --region europe-west2 --project ${PROJECT}"
           sh "cd kubernetes-manifests"
-          sh "kubectl apply -f ./kubernetes-manifests/adservice.yaml"
+          sh "kubectl apply -f ./kubernetes-manifests/checkoutservice.yaml"
         }
       }
     }
