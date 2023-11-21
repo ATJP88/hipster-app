@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: checkoutservice
+          image: gcr.io/proud-reality-405802/checkoutservice:latest 
           ports:
           - containerPort: 5050
           readinessProbe:
