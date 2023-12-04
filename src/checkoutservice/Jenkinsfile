@@ -2,7 +2,7 @@ pipeline {
 
   environment {
     PROJECT = "weighty-clone-406604"
-    APP_NAME = "cartservice"
+    APP_NAME = "checkoutservice"
     FE_SVC_NAME = "${APP_NAME}-pay"
     CLUSTER = "k8s-cluster-dev"
     CLUSTER_ZONE = "europe-west2-a"
