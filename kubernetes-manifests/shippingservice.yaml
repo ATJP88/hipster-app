@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: gcr.io/proud-reality-405802/shippingservice:latest
+          image: gcr.io/weighty-clone-406604/shippingservice:latest
           ports:
             - containerPort: 50051
           envFrom:
