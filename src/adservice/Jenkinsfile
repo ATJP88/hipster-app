@@ -61,6 +61,7 @@ spec:
           sh "gcloud config list"
           sh "gcloud config set project ${PROJECT}"
           sh "gcloud config set account gke-admin@${PROJECT}.iam.gserviceaccount.com"
+          sh "chmod -R 777 ."
           sh "gcloud auth activate-service-account --key-file=./gke-admin-${PROJECT}.json"
           sh "gcloud config list"
           sh "PYTHONUNBUFFERED=1 gcloud builds submit -t ${IMAGE_TAG} --project=${PROJECT} ."
