@@ -52,7 +52,7 @@ spec:
           value: "frontend:80"
       containers:
       - name: main
-        image: gcr.io/proud-reality-405802/loadgenerator:latest
+        image: gcr.io/weighty-clone-406604/loadgenerator:latest
         env:
         - name: FRONTEND_ADDR
           value: "frontend:80"
