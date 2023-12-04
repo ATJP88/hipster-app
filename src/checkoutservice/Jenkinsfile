@@ -54,7 +54,7 @@ spec:
     }
     stage('Build and push image with Container Builder') {
       steps {
-        dir("./src/cartservice") {
+        dir("./src/checkoutservice") {
         container('gcloud') {
           sh "pwd"
            sh "ls -lrta"
