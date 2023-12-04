@@ -28,7 +28,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: gcr.io/proud-reality-405802/paymentservice:latest
+        image: gcr.io/weighty-clone-406604/paymentservice:latest
         ports:
         - containerPort: 50051
         envFrom:
