@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: gcr.io/proud-reality-405802/frontend:latest
+          image: gcr.io/weighty-clone-406604/frontend:latest
           ports:
           - containerPort: 8080
           readinessProbe:
