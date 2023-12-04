@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    PROJECT = "proud-reality-405802"
+    PROJECT = "weighty-clone-406604"
     APP_NAME = "cartservice"
     FE_SVC_NAME = "${APP_NAME}-pay"
     CLUSTER = "k8s-cluster-dev"
@@ -60,8 +60,8 @@ spec:
            sh "ls -lrta"
           sh "gcloud config list"
           sh "gcloud config set project ${PROJECT}"
-          sh "gcloud config set account gke-admin@intrepid-league-397203.iam.gserviceaccount.com"
-          sh "gcloud auth activate-service-account --key-file=./gke-admin-proud-reality-405802.json"
+          sh "gcloud config set account gke-admin@${PROJECT}.iam.gserviceaccount.com"
+          sh "gcloud auth activate-service-account --key-file=./gke-admin-${PROJECT}.json"
           sh "gcloud config list"
           sh "PYTHONUNBUFFERED=1 gcloud builds submit -t ${IMAGE_TAG} --project=${PROJECT} ."
         }
@@ -73,8 +73,8 @@ spec:
         container('kubectl') {
           sh "gcloud config list"
           sh "gcloud config set project ${PROJECT}"
-          sh "gcloud config set account gke-admin@intrepid-league-397203.iam.gserviceaccount.com"
-          sh "gcloud auth activate-service-account --key-file=./kubernetes-manifests/gke-admin-proud-reality-405802.json"
+          sh "gcloud config set account gke-admin@${PROJECT}.iam.gserviceaccount.com"
+          sh "gcloud auth activate-service-account --key-file=./kubernetes-manifests/gke-admin-${PROJECT}.json"
           sh "gcloud config list"
           sh "export LIGHTSTEP_ACCESS_TOKEN=y3i3FeoGUm6Az4Iu38cLDKnBceJ6dIQjKSBUxR9AhK3jYOk3vtc3AuM9KPW4FP+qIv48NnJ7o5RwT/uAHmcDM3kJazkHP1DxXPtzml7I"
           sh "gcloud container clusters get-credentials hipster-dev --region europe-west2 --project ${PROJECT}"
